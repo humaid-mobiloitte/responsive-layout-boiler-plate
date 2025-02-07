@@ -26,9 +26,7 @@ export default function ResponsiveLayout() {
           bgcolor: "primary.main",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
-          px: 5, // Padding for navbar
-          py: 2, // Vertical padding
+          justifyContent: "space-between"
         }}
       >
         {/* Logo */}
@@ -37,11 +35,17 @@ export default function ResponsiveLayout() {
         </Typography>
 
         {/* Navigation Links - Convert to dropdown on small screens */}
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3, ml: "auto", mr: 3 }}> 
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}> 
           <Typography variant={{ xs: "body2", md: "h6" }} color="white">Home</Typography>
           <Typography variant={{ xs: "body2", md: "h6" }} color="white">About</Typography>
           <Typography variant={{ xs: "body2", md: "h6" }} color="white">Services</Typography>
           <Typography variant={{ xs: "body2", md: "h6" }} color="white">Contact</Typography>
+        </Box>
+
+        {/* Buttons - Hide on small screens */}
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+          <Button variant="contained" color="secondary">Sign Up</Button>
+          <Button variant="contained" color="secondary">Login</Button>
         </Box>
 
         {/* Dropdown menu for small screens */}
@@ -53,13 +57,9 @@ export default function ResponsiveLayout() {
           <MenuItem onClick={handleClose}>About</MenuItem>
           <MenuItem onClick={handleClose}>Services</MenuItem>
           <MenuItem onClick={handleClose}>Contact</MenuItem>
+          <MenuItem onClick={handleClose}><Button fullWidth variant="contained" color="secondary">Sign Up</Button></MenuItem>
+          <MenuItem onClick={handleClose}><Button fullWidth variant="contained" color="secondary">Login</Button></MenuItem>
         </Menu>
-
-        {/* Buttons */}
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <Button variant="contained" color="secondary">Sign Up</Button>
-          <Button variant="contained" color="secondary">Login</Button>
-        </Box>
       </Box>
 
       {/* Main Content */}
@@ -80,7 +80,7 @@ export default function ResponsiveLayout() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "flex-start",
+            alignItems: "flex-start"
           }}
         >
           <Typography variant={{ xs: "h3", md: "h1" }} gutterBottom>
